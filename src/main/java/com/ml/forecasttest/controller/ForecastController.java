@@ -21,13 +21,13 @@ public class ForecastController {
     }
 
     @GetMapping(value = "/clima")
-    public ResponseEntity<?> getClima(@RequestParam Long day) {
-        if (day <= 0 || day > ForecastUtil.DAYS_PER_YEAR * ForecastUtil.YEAR_PREDICTION) {
+    public ResponseEntity<?> getClima(@RequestParam Long dia) {
+        if (dia <= 0 || dia > ForecastUtil.DAYS_PER_YEAR * ForecastUtil.YEAR_PREDICTION) {
             return ResponseEntity.badRequest()
                     .body("Dia no contemplado.");
         } else {
             return ResponseEntity.ok()
-                    .body(forecastService.getDayForecast(day));
+                    .body(forecastService.getDayForecast(dia));
         }
     }
 
