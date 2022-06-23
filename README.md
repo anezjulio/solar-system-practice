@@ -1,1 +1,1 @@
-# ML-test
+# solar-system-practice
